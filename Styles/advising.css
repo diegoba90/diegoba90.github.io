@@ -1,0 +1,145 @@
+html {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    height: 300px;
+}
+
+#wrap {
+    flex: 1 1 auto;
+    overflow: auto;
+    width: 900px;
+    margin: 0 auto;
+    height: 100%;
+    border-style: solid;
+    border-color: black;
+}
+
+body {
+    background-color: white;
+    font-family: sans-serif;
+}
+
+/*images*/
+#aum-logo {
+    height: 7em;
+    float: left;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#advisor {
+    height: 13em;
+    float: left;
+}
+
+header{
+    flex: 0 1 auto;
+    padding-bottom: 2em;
+}
+
+#title{
+    margin-bottom: -.5em;
+}
+
+/*navigatin bar*/
+#navMenu ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #231f20;
+}
+
+#navMenu ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+#navMenu li {
+    float: left;
+    padding: 1em;
+    margin-left: 2em;
+}
+
+/*sidebar*/
+aside {
+    background-color: #ff4814;
+    float: left;
+    position: relative;
+    height:79%;
+}
+
+aside #sideNav ul {
+    list-style-type: none;
+}
+
+aside #sideNav ul li {
+    margin-left: -2em;
+    padding-right: 2em;
+    padding-top: 1em;
+}
+
+aside #sideNav ul li a {
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    color: white;
+}
+
+/*main content*/
+main h4 {
+    margin-left: 10em;
+    font-size: 18px;
+}
+
+main p {
+    font-size: 14px;
+    margin-left: 15em;
+    margin-right: 2.2em;
+}
+
+table {
+    margin-left: 15em;
+}
+
+
+/*footer*/
+footer{
+    border-top: solid;
+    border-top-color: black;
+}
+
+footer p{
+    text-align: center;
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

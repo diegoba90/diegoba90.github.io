@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AUM Computer Science</title>
+    <link rel="shortcut icon" href="/Images/favicon.ico" type="image/favicon.ico">
+    <link rel="stylesheet" href="/Styles/calculator.css">
+    <link rel="stylesheet" href="Styles/normalize.css">
+</head>
+    
+<body>
+<div id="wrap">
+    <!-- Main Header -->
+    <header>
+    <img src="/Images/aumLogo.gif" alt="logo" id="aum-logo">
+    <h1 id="title"><i>College of Sciences</i></h1>
+    <h2 id="subtitle"><i>Department of Computer Science</i></h2>
+    </header>
+    
+    <!-- Navigation Bar -->
+    <nav id="navMenu">
+        <ul>
+            <li><a href="/index.html" class="bullets">Home</a></li>
+            <li><a href="/Pages/description.html">Program Description</a></li>
+            <li><a href="/Pages/application.html" class="bullets">Teacher Assistant Application</a></li>
+            <li><a href="/Pages/calculator.html" class="bullets">GPA Calculator</a></li>
+        </ul>
+    </nav>
+    
+    <!-- left navigation bar -->
+    <aside>
+        <nav id="sideNav">
+            <ul>
+                <li><a href="/Pages/advising.html" class="bullets">Advising</a></li>
+                <li><a href="/Pages/concentrations.html" class="bullets">Concentrations</a></li>
+                <li><a href="https://www.aum.edu" class="bullets">AUM Home Page</a></li>
+            </ul>
+        </nav>
+    </aside>
+    
+    <!-- body of website -->
+    <main>
+        <h4>Grade Point Average (GPA) Calculator</h4>
+        <p>Below you can calculate your current GPA by inserting your credit hours and your letter grade</p>
+        
+        <form name="GPACalcForm" id="gpaForm">
+            <table id="gpaTable">
+                <th></th>
+                <th>Grade</th>
+                <th style="padding-left: 2em">Credits</th>
+                <tr>
+                    <td>Class 1</td>
+                    <td><input type="text" size="5" name="grade1" maxlength="5"></td>
+                    <td id="credits">Credits</td>
+                    <td><input type="text" size="5" maxlength="5" name="credit1"></td>
+                </tr>
+                <tr>
+                    <td>Class 2</td>
+                    <td><input type="text" name="grade2" size="5" maxlength="5"></td>
+                    <td id="credits">Credits</td>
+                    <td><input type="text" name="credit2" size="5" maxlength="5"></td>
+                <tr>
+                    <td>Class 3</td>
+                    <td><input type="text" name="grade3" size="5" maxlength="5"></td>
+                    <td id="credits">Credits</td>
+                    <td><input type="text" name="credit3" size="5" maxlength="5"></td>
+                </tr>
+                <tr>
+                    <td>Class 4</td>
+                    <td><input type="text" name="grade4" size="5" maxlength="5"></td>
+                    <td id="credits">Credits</td>
+                    <td><input type="text" name="credit4" size="5" maxlength="5"></td>
+                </tr>
+                <tr>
+                    <td>Class 5</td>
+                    <td><input type="text" name="grade5" size="5" maxlength="5"></td>
+                    <td id="credits">Credits</td>
+                    <td><input type="text" name="credit5" size="5" maxlength="5"></td>
+                </tr>
+                <tr>
+                    <td>Class 6</td>
+                    <td><input type="text" name="grade6" size="5" maxlength="5"></td>
+                    <td id="credits">Credits</td>
+                    <td><input type="text" name="credit6" size="5" maxlength="5"></td>
+                </tr>
+                <tr>
+                    <td>Class 7</td>
+                    <td><input type="text" name="grade7" size="5" maxlength="5"></td>
+                    <td id="credits">Credits</td>
+                    <td><input type="text" name="credit7" size="5" maxlength="5"></td>
+                </tr>
+                <tr>
+                    <td>Class 8</td>
+                    <td><input type="text" name="grade8" size="5" maxlength="5"></td>
+                    <td id="credits">Credits</td>
+                    <td><input type="text" name="credit8" size="5" maxlength="5"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center; padding-left: 4em; padding-top: 1em;">
+                        <input type="button" value="Calculate" name="calcButton" onclick="gpacalc()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <p></p>
+        <p></p>
+        
+        <!-- Calculator Script -->
+        
+        <SCRIPT LANGUAGE="JavaScript">
+        <!--
+    
+            function gpacalc(){
+
+            //define grades and values
+            var grade = Array(9);
+            var credit = Array(9);
+            var ingr = new Array(5);
+            var incr = new Array(5);
+
+            //define valid grades and values
+            var gradeCount = 11;
+            grade[0] = "A+";
+            credit[0] = 5;
+            grade[1] = "A";
+            credit[1] = 4;
+            grade[2] = "A-";
+            credit[2] = 3.66;
+            grade[3] = "B+";
+            credit[3] = 3.33;
+            grade[4] = "B";
+            credit[4] = 3;
+            grade[5] = "B-";
+            credit[5] = 2.66;
+            grade[6] = "C+";
+            credit[6] = 2.33;
+            grade[7] = "C";
+            credit[7] = 2;
+            grade[8] = "C-";
+            credit[8] = 1.66;
+            grade[9] = "D";
+            credit[9] = 1;
+            grade[10] = "F";
+            credit[10] = 0;
+
+            //retrive user input for grades
+            ingr[0] = document.GPACalcForm.grade1.value;
+            ingr[1] = document.GPACalcForm.grade2.value;
+            ingr[2] = document.GPACalcForm.grade3.value;
+            ingr[3] = document.GPACalcForm.grade4.value;
+            ingr[4] = document.GPACalcForm.grade5.value;
+            ingr[5] = document.GPACalcForm.grade6.value;
+            ingr[6] = document.GPACalcForm.grade7.value;
+            ingr[7] = document.GPACalcForm.grade8.value;
+
+            //retrive user input for credits
+            incr[0] = document.GPACalcForm.credit1.value;
+            incr[1] = document.GPACalcForm.credit2.value;
+            incr[2] = document.GPACalcForm.credit3.value;
+            incr[3] = document.GPACalcForm.credit4.value;
+            incr[4] = document.GPACalcForm.credit5.value;
+            incr[5] = document.GPACalcForm.credit6.value;
+            incr[6] = document.GPACalcForm.credit7.value;
+            incr[7] = document.GPACalcForm.credit8.value;
+
+            //calculate GPA
+            var allGrades = 0;
+            var allCredits = 0;
+            var gpa = 0;
+
+            for (var x = 0; x < 5 + 3; x++){
+                if (ingr[x] == "") break;
+               // if (isNan(parseInt(incr[x]))) alert("Error - You did not enter a numberic credits value for class. If class is worth 0 credits then please enter 0 in the text field")
+
+                var validGradeCheck = 0;
+                for (var xx = 0; xx < gradeCount; xx++){
+                    if (ingr [x] == grade[xx]){
+                        allGrades = allGrades + (parseInt(incr[x], 10) * credit[xx]);
+                        allCredits = allCredits + parseInt(incr[x], 10);
+                        validGradeCheck = 1;
+                        break;
+                    }
+                }
+
+                if (validGradeCheck == 0){
+                    alert("Error - Could not recognize the grade entered for class" + eval(i + 1)+ ". Please use standard college grades in the form of A+, A, A- ... F");
+                    return 0;
+                }
+            }
+
+            //if check prevents a divide by 0 error
+            if (allCredits == 0){
+                alert("Error - You did not enter any grade values! GPA = N/A");
+                return 0;
+            }
+
+            gpa = allGrades / allCredits;
+
+            alert("GPA = " + eval(gpa));
+
+            return 0;
+
+        } //-->
+        
+        </SCRIPT>
+        
+        
+            
+    </main>
+    <footer>
+        <p>Created by: Diego Acuna, CS Student</p>
+        <p>&copy; Copyright: Diego Acuna</p>
+        <p>Email: <a href="mailto: dacuna1@aum.edu">dacuna1@aum.edu</a></p>
+    </footer>
+
+</div>
+</body>
+
+</html>

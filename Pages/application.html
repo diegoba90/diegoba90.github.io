@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AUM Computer Science</title>
+    <link rel="shortcut icon" href="/Images/favicon.ico" type="image/favicon.ico">
+    <link rel="stylesheet" href="/Styles/application.css">
+    <link rel="stylesheet" href="Styles/normalize.css">
+</head>
+    
+<body>
+<div id="wrap">
+    <!-- Main Header -->
+    <header>
+    <img src="/Images/aumLogo.gif" alt="logo" id="aum-logo">
+    <h1 id="title"><i>College of Sciences</i></h1>
+    <h2 id="subtitle"><i>Department of Computer Science</i></h2>
+    </header>
+    
+    <!-- Navigation Bar -->
+    <nav id="navMenu">
+        <ul>
+            <li><a href="/index.html" class="bullets">Home</a></li>
+            <li><a href="/Pages/description.html">Program Description</a></li>
+            <li><a href="/Pages/application.html" class="bullets">Teacher Assistant Application</a></li>
+            <li><a href="/Pages/calculator.html" class="bullets">GPA Calculator</a></li>
+        </ul>
+    </nav>
+    
+    <!-- left navigation bar -->
+    <aside>
+        <nav id="sideNav">
+            <ul>
+                <li><a href="/Pages/advising.html" class="bullets">Advising</a></li>
+                <li><a href="/Pages/concentrations.html" class="bullets">Concentrations</a></li>
+                <li><a href="https://www.aum.edu" class="bullets">AUM Home Page</a></li>
+            </ul>
+        </nav>
+    </aside>
+    
+    <!-- body of website -->
+    <main>
+        <h4>Teacher Assistant Description</h4>
+        <p>A teacher assitant is a one individual student that get's selected in order to aid the professor. One of the requirements is that the student has taken the class they'll be assisting with before and is in good academic standing. Students selected to be Teacher Assistants may get tuition discounts as well. Please speak with your advisor in order to get all of the lastest incentives for becoming a teacher assistant</p>
+        <h4>Teacher Assistant Application</h4>
+        <p>Please fill out the following form. Use the comment section to put any additional comments that may make your application stand out. Also use to include the name of the professor you're trying to assist as well as the classes.</p>
+        <br>
+        <form action="/Pages/data.html" name="app-form" method="get" id="app-form">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" autofocus required><br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required><br><br>
+            <label for="studentID">Student ID:</label>
+            <input type="text" id="studentID" name="studentID" required><br><br>
+            <label for="gender" id="">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value=""></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="ratherNotSay">Rather Not Say</option>
+            </select><br><br>
+            <label for="gpa">GPA:</label>
+            <input type="text" id="gpa" name="gpa" placeholder="ex: 4.0" required><br><br>
+            <label for="date">Date:</label>
+            <input type="text" id="date" name="date" placeholder="mm/dd/yyyy" required><br><br>
+            <label for="comments">Comments:</label><br>
+            <textarea rows="4" cols="50" name="comments" form="app-form"></textarea><br><br>
+            <input type="submit" value="Submit" id="button">
+            <input type="reset" value="Reset">
+            
+        </form>
+    </main>
+    <footer>
+        <p>Created by: Diego Acuna, CS Student</p>
+        <p>&copy; Copyright: Diego Acuna</p>
+        <p>Email: <a href="mailto: dacuna1@aum.edu">dacuna1@aum.edu</a></p>
+    </footer>
+
+</div>
+</body>
+
+</html>

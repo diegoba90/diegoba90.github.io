@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AUM Computer Science</title>
+    <link rel="shortcut icon" href="/Images/favicon.ico" type="image/favicon.ico">
+    <link rel="stylesheet" href="/Styles/data.css">
+    <link rel="stylesheet" href="Styles/normalize.css">
+</head>
+    
+<script type="text/javascript">
+//<![CDATA[
+    var decode = function ( text ) {
+        text = text.replace(/\+/g, " ");
+        text = text.replace(/%[a-fA-F0-9]{2}/g,
+            function ( text ) {
+                return String.fromCharCode( "0x" + text.substr(1,2));
+            }
+        );
+        return text;
+    }
+    
+    var display_data = function () {
+        var query = location.search.replace("?", "");
+        if ( query == "" ) return;
+        
+        var fields = query.split("&");
+        
+        if ( fields.length == 0 ) {
+            document.write("<p>No data was submitted.</p>");
+        } else {
+            document.write("<dl>");
+            var field_parts;
+            for ( var i in fields ) {
+                field_parts = fields[i].split("=");
+                field_parts[0] = decode (field_parts[0]);
+                field_parts[1] = decode (field_parts[1]);
+                document.write("<dt>" + field_parts[0] + "</dt>");
+                document.write("<dd>" + field_parts[1] + "</dd>");
+            }
+            document.write("</dl>");
+        }
+    }
+    ]]
+</script>
+    
+<body>
+<div id="wrap">
+    <!-- Main Header -->
+    <header>
+    <img src="/Images/aumLogo.gif" alt="logo" id="aum-logo">
+    <h1 id="title"><i>College of Sciences</i></h1>
+    <h2 id="subtitle"><i>Department of Computer Science</i></h2>
+    </header>
+    
+    <!-- Navigation Bar -->
+    <nav id="navMenu">
+        <ul>
+            <li><a href="index.html" class="bullets">Home</a></li>
+            <li><a href="/Pages/description.html">Program Description</a></li>
+            <li><a href="/Pages/application.html" class="bullets">Teacher Assistant Application</a></li>
+            <li><a href="/Pages/calculator.html" class="bullets">GPA Calculator</a></li>
+        </ul>
+    </nav>
+    
+    <!-- left navigation bar -->
+    <aside>
+        <nav id="sideNav">
+            <ul>
+                <li><a href="Pages/advising.html" class="bullets">Advising</a></li>
+                <li><a href="Pages/concentrations.html" class="bullets">Concentrations</a></li>
+                <li><a href="https://www.aum.edu" class="bullets">AUM Home Page</a></li>
+            </ul>
+        </nav>
+    </aside>
+    
+    <!-- body of website -->
+    <main>
+        <h4>Application Data Has Been Submitted</h4>
+        <script>display_data();</script>
+          
+    </main>
+    <footer>
+        <p>Created by: Diego Acuna, CS Student</p>
+        <p>&copy; Copyright: Diego Acuna</p>
+        <p>Email: <a href="mailto: dacuna1@aum.edu">dacuna1@aum.edu</a></p>
+    </footer>
+
+</div>
+</body>
+
+
+
+</html>
